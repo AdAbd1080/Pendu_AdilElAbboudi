@@ -64,7 +64,7 @@ def jouer_pendu():
             break
 
     if essais_restants == 0:
-        print("Dommage ! Vous n'avez pas réussi à deviner le mot. Le mot était :", mot_a_deviner)
+        print("Dommage ! . Le mot était :", mot_a_deviner)
         afficher_pendu(essais_restants)
 
 if __name__ == "__main__":
