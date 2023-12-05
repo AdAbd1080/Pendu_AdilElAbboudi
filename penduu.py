@@ -38,7 +38,7 @@ def afficher_pendu(essais_restants):
 def jouer_pendu():
     mot_a_deviner = choisir_mot()
     lettres_trouvees = []
-    essais_restants = 9
+    essais_restants = 10
 
     print("Bienvenue au jeu du pendu de Adil !")
     print("Le mot à deviner a", len(mot_a_deviner), "lettres.")
