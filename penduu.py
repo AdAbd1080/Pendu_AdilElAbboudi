@@ -26,4 +26,4 @@ def jouer_pendu():
     essais_restants = 9
 
     print("Bienvenue au jeu du pendu !")
-    print("Le mot à deviner a", len(mot_a_deviner), "lettres."
+    print("Le mot à deviner a", len(mot_a_deviner), "lettres.")
