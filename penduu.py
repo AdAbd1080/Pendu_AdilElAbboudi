@@ -21,6 +21,20 @@ def deviner_lettre():
         else:
             print("Veuillez entrer une seule lettre valide.")
 
+def afficher_pendu(essais_restants):
+    pendu = [
+        "--------",
+        "|      |",
+        "|      " + ("O" if essais_restants < 7 else ""),
+        "|     " + ("/|\\" if essais_restants < 6 else "/|"),
+        "|     " + ("/ \\" if essais_restants < 5 else "/"),
+        "|",
+        "========="
+    ]
+
+    for ligne in pendu:
+        print(ligne)
+
 def jouer_pendu():
     mot_a_deviner = choisir_mot()
     lettres_trouvees = []
@@ -45,11 +59,13 @@ def jouer_pendu():
             print("La lettre", lettre, "n'est pas dans le mot.")
             essais_restants -= 1
 
-        if set(lettres_trouvees) == set(mot_a_deviner):
+        if all(lettre in lettres_trouvees for lettre in mot_a_deviner):
             print("Félicitations ! Vous avez trouvé le mot :", mot_a_deviner)
             break
 
     if essais_restants == 0:
         print("Dommage ! Vous n'avez pas réussi à deviner le mot. Le mot était :", mot_a_deviner)
+        afficher_pendu(essais_restants)
+
 if __name__ == "__main__":
     jouer_pendu()
