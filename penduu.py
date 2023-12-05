@@ -60,7 +60,7 @@ def jouer_pendu():
             essais_restants -= 1
 
         if all(lettre in lettres_trouvees for lettre in mot_a_deviner):
-            print("Félicitations ! Vous avez trouvé le mot :", mot_a_deviner)
+            print("Bien vu ! Vous avez trouvé le mot :", mot_a_deviner)
             break
 
     if essais_restants == 0:
