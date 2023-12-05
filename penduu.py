@@ -12,7 +12,8 @@ def afficher_mot_cache(mot, lettres_trouvees):
         else:
             mot_cache += "_"
     return mot_cache
-    def deviner_lettre():
+
+def deviner_lettre():
     while True:
         lettre = input("Devinez une lettre : ").lower()
         if len(lettre) == 1 and lettre.isalpha():
@@ -27,6 +28,7 @@ def jouer_pendu():
 
     print("Bienvenue au jeu du pendu !")
     print("Le mot à deviner a", len(mot_a_deviner), "lettres.")
+
     while essais_restants > 0:
         mot_cache = afficher_mot_cache(mot_a_deviner, lettres_trouvees)
         print("Mot actuel :", mot_cache)
@@ -46,6 +48,8 @@ def jouer_pendu():
         if set(lettres_trouvees) == set(mot_a_deviner):
             print("Félicitations ! Vous avez trouvé le mot :", mot_a_deviner)
             break
-        if essais_restants == 0:
-        print("Dommage ! Vous n'avez pas réussi à deviner le mot. Le mot était :", mot_a_deviner)
 
+    if essais_restants == 0:
+        print("Dommage ! Vous n'avez pas réussi à deviner le mot. Le mot était :", mot_a_deviner)
+if __name__ == "__main__":
+    jouer_pendu()
