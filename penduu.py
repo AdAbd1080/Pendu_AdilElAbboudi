@@ -27,3 +27,23 @@ def jouer_pendu():
 
     print("Bienvenue au jeu du pendu !")
     print("Le mot à deviner a", len(mot_a_deviner), "lettres.")
+    while essais_restants > 0:
+        mot_cache = afficher_mot_cache(mot_a_deviner, lettres_trouvees)
+        print("Mot actuel :", mot_cache)
+        print("Il vous reste", essais_restants, "essais sur 9.")
+
+        lettre = deviner_lettre()
+
+        if lettre in lettres_trouvees:
+            print("Vous avez déjà deviné cette lettre. Essayez une autre.")
+        elif lettre in mot_a_deviner:
+            print("Bien joué ! La lettre", lettre, "est dans le mot.")
+            lettres_trouvees.append(lettre)
+        else:
+            print("La lettre", lettre, "n'est pas dans le mot.")
+            essais_restants -= 1
+
+        if set(lettres_trouvees) == set(mot_a_deviner):
+            print("Félicitations ! Vous avez trouvé le mot :", mot_a_deviner)
+            break
+
