@@ -46,4 +46,6 @@ def jouer_pendu():
         if set(lettres_trouvees) == set(mot_a_deviner):
             print("Félicitations ! Vous avez trouvé le mot :", mot_a_deviner)
             break
+        if essais_restants == 0:
+        print("Dommage ! Vous n'avez pas réussi à deviner le mot. Le mot était :", mot_a_deviner)
 
